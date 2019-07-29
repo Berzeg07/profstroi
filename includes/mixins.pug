@@ -1,0 +1,339 @@
+mixin news(src)
+	.news-item
+		a(href="#")
+			.news-item__img
+				+i(src)
+		.news-item__content
+			.news-item__date 20.06.2018
+			a(href="#" class="news-item__title") Lorem ipsum dolor sit amet
+			.news-item__text.
+				Lorem ipsum dolor sit amet, exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde
+mixin b(cls, nm)
+	a(href="#order" data-modal="modal" class=cls)=nm
+mixin bnav(cls, nm)
+	a(href="#" class=cls)=nm
+		span.left
+mixin i(name)
+	- var s = 'img/'+name
+	img(src=s alt="img")
+mixin pagination
+	nav(class="navigation pagination" role="navigation")
+		div(class="nav-links")
+			a(class="prev page-numbers" href="#")
+			a(class="page-numbers" href="#") 1
+			span(class="page-numbers current") 2
+			a(class="page-numbers" href="#") ...
+			a(class="page-numbers" href="#") 22
+			a(class="next page-numbers" href="#")
+
+mixin breadcrumbs(vid)
+	if vid == '1'
+		.kama_breadcrumbs
+			span
+				a(href="#")
+					span О компании
+			span(class="kb_sep") /
+			span(class="kb_title") отзывы
+	if vid == '2'
+		.kama_breadcrumbs
+			span
+				a(href="#")
+					span О компании
+			span(class="kb_sep") /
+			span(class="kb_title") НОВОСТИ И АКЦИИ
+	if vid == '3'
+		.kama_breadcrumbs
+			span
+				a(href="#")
+					span О компании
+			span(class="kb_sep") /
+			span
+				a(href="#")
+					span НОВОСТИ И АКЦИИ
+			span(class="kb_sep") /		
+			span(class="kb_title") ВСЕ НОВОСТИ
+mixin form(vid)
+	if vid == '1'
+		.form-block
+			.greenline
+				h2.w820 Как вступить в КПК «Народный»?
+			.container
+				.row
+					.col-lg-12
+						form
+							span.form-title ЗАДАТЬ ВОПРОС
+							.form-para
+								.form-para__item
+									input(type="text" placeholder="Имя" name="uname")
+								.form-para__item
+									input(type="text" placeholder="Телефон" name ="phone")
+							textarea(placeholder="Текст сообщения" name="text")
+							input(type="submit" class="btn btn_green" value="Отправить")
+						.center
+							+b('btn btn_consult form-btn-consult', 'Заказать бесплатную консультацию')
+	if vid == '2'
+		.form-block
+			.greenline
+				h2 Форма Обратной связи:
+			.container
+				.row
+					.col-lg-12
+						.form-subtitle.
+							Мы ценим обратную связь от наших клиентов и постоянно повышаем качество обслуживания. Поделитесь своим опытом обращения в СКПК и оставьте свой отзыв о нашей работе!
+						form
+							span.form-title ОТЗЫВ
+							.form-para
+								.form-para__item
+									input(type="text" placeholder="Имя" name="uname")
+								.form-para__item
+									input(type="text" placeholder="Телефон" name ="phone")
+							textarea(placeholder="Текст сообщения" name="text")
+							input(type="submit" class="btn btn_green" value="Отправить")
+							input(type="hidden" value="Первая форма")
+						.center
+							+b('btn btn_consult form-btn-consult', 'Заказать бесплатную консультацию')
+	if vid == '3'
+		.form-block
+			.greenline
+				h2 Оставьте заявку на займ:
+			.container
+				.row
+					.col-lg-12
+						form
+							span.form-title ФОРМА ЗАЯВКИ
+							.form-para
+								.form-para__item
+									input(type="text" placeholder="Фамилия" name="surname")
+								.form-para__item
+									input(type="text" placeholder="Email" name ="email")
+							.form-para
+								.form-para__item
+									input(type="text" placeholder="Имя" name="uname")
+								.form-para__item
+									input(type="text" placeholder="Телефон" name ="phone")
+							.form-para
+								.form-para__item
+									input(type="text" placeholder="Отчество" name="patron")
+								.form-para__item
+									.custom-select
+										select(placeholder="Выберете город" name="gorod")
+											option Калининград
+											option Ярославль
+							.form-para
+								.form-para__item
+									span.microlabel Сумма займа
+									input(type="text" placeholder="рубли" name="summa")
+								.form-para__item
+									.custom-select
+										select(name="zalog" placeholder="Выберете предмет залога")
+											option 1
+											option 2
+							.formnote.
+								Нажимая на кнопку «Отправить заявку»,
+								я даю свое согласие на обработку персональных данных
+							input(type="submit" class="btn btn_green" value="Отправить заявку")
+						.center
+							+b('btn btn_consult form-btn-consult', 'Заказать бесплатную консультацию')
+	if vid == '4'
+		.form-block
+			.greenline
+				h2.w820 Выберите накопительную программу:
+			.container
+				.row
+					.col-lg-12
+						form.form-calc
+							.form__inner
+								.form__left
+									span.form-title Накопительная программа
+									.custom-select
+										select(placeholder="Стандартные - для широкой аудитории участников")
+											option(value="1") ДОХОДНЫЙ ГОД - Без капитализации, выплата % ежемесячно
+											option(value="2") КОМФОРТНЫЙ ПЛЮС - Капитализация Ежемесячно, выплата % в коце срока
+											option(value="3") ДОЛГОЛЕТИЕ - Без капитализации, выплата % ежемесячно
+											option(value="4") ВЫСШИЙ ПИЛОТАЖ - Без капитализации, выплата % ежемесячно
+											option(value="5") ВЫСШИЙ ПИЛОТАЖ - Без капитализации, выплата % в коце срока
+											option(value="6") УПРАВЛЯЕМЫЙ РОСТ - Без капитализации, выплата % в коце срока
+											option(value="7") ЗОЛОТАЯ КОПИЛКА - Без капитализации, выплата % ежемесячно
+											option(value="8") ЗОЛОТАЯ КОПИЛКА - Без капитализации, выплата % в коце срока
+									span.microlabel Срок (месяц)
+									span.small-label#month-label-1 за 6 месяцев
+									.months-slider__box
+										#months-slider
+									span.microlabel Сумма
+									input(type="text" placeholder="рубли" name="summa" value="100 000")
+								.form__right
+									span.microlabel Доход (в месяц)
+									span.profit 500 руб.
+									span.microlabel Вложите
+									input(type="text" placeholder="100 000" name ="vlogite")
+									span.microlabel Получите
+									input(type="text" placeholder="103 000" name ="poluchite")
+									span.small-label#month-label-2 за 6 месяцев
+									input(type="submit" class="btn btn_green" value="Отправить заявку")
+							.formnote.
+								Нажимая на кнопку «Отправить заявку»,
+								я даю свое согласие на обработку персональных данных
+						.center
+							+b('btn btn_consult form-btn-consult', 'Заказать бесплатную консультацию')
+	if vid == '5'
+		.form-block
+			.greenline
+				h2 Форма Обратной связи:
+			.container
+				.row
+					.col-lg-12
+						form.feedback-form
+							span.form-title Задать вопрос
+							.form-para
+								.form-para__item
+									input(type="text" placeholder="Имя" name="uname")
+								.form-para__item
+									input(type="text" placeholder="Телефон" name ="phone")
+							textarea(placeholder="Текст сообщения" name="text")
+							input(type="submit" class="btn btn_green" value="Отправить")
+							input(type="hidden" value="Первая форма")
+mixin menu(list, className)
+	ul(class=className)
+		for item in list
+			li
+				a(href="#")=item
+mixin ulli(List, className, span)
+	if span == 'true'
+		if className==''
+			ul
+				for item in List
+					li
+						span=item	
+		else
+			ul(class=className)
+				for item in List
+					li
+						span=item
+	else 
+		if className==''
+			ul
+				for item in List
+					li=item	
+		else
+			ul(class=className)
+				for item in List
+					li=item	
+mixin ProgramItem(number, title, List)
+	.program-item
+		.program-item_headline
+			.program-item_left
+				.program-item_number
+					span=number
+			.program-item_right
+				.program-item_title=title
+		+ulli(List, 'program-list', 'true')
+
+mixin EmailSection(className, title, subtitle, titleBig, submitText, submitClass, formClassName)
+	div(class=className)
+		.container
+			.row
+				.col-md-12
+					- var newtitle =  title
+					if titleBig == 'false'
+						span.subscribe-title_small= newtitle
+					else 
+						span.subscribe-title= newtitle
+					if subtitle != ''
+						span.subscribe-subtitle=subtitle
+					form(class=formClassName action="#" class="form-line")
+						input(type="text" name="phone" class="phone" placeholder='Введите ваш E-mail')
+						input(type="hidden" name='formname' value=newtitle)
+						input(type="submit" value=submitText class=submitClass)
+mixin AuthorItem(imgSrc, name, description)
+	.author-item
+		.author-item_imgbox
+			img(src=imgSrc)
+		span.author-name=name
+		p.author-desc=description
+mixin HeadLine(headln, forwhat)
+	case forwhat
+		when 0
+			span.common-title.common-title_main=headln
+		when 1
+			span.common-title.common-title_sidebar-direct=headln
+		when 2
+			span.common-title.common-title_sidebar-direct.common-title_sidebar-traeng=headln
+		when 3
+			span.common-title.common-title_second=headln
+		default
+			span.common-title=headln
+mixin PriceItem(title, List, price, placem, active)
+	if active == 'true'
+		.price-item.price-item-active
+			span.price-title=title
+			.price-middle-content
+				+ulli(List, '', '')
+				a(class="price-more" href="") Подробнее
+			.price-box
+				span=price
+				span рублей
+			a(class="button", href="#byu" data-modal="modal") Купить
+			span.price-place=place
+	else
+		.price-item
+			span.price-title=title
+			.price-middle-content
+				+ulli(List, '', '')
+				a(class="price-more" href="") Подробнее
+			.price-box
+				span=price
+				span рублей
+			a(class="button", href="#byu" data-modal="modal") Купить
+			span.price-place=place
+mixin otzyv(title, img, text, link)
+	.testimonial
+		.testim_top
+			.testim_avatar
+				img(src=img)
+			span.testim_name=title
+		.testim_text
+			p=text
+		a(class="testim_more" href="#")=link
+mixin tovarItem(image, title, description, underlineTitle,underlineDescription, tovarpadding)
+	if tovarpadding=='false'
+		.tovar-item
+			a(href="#")
+				.tovar-item_imgbox
+					img(src='img/'+image)
+					- var titleVar = title
+				if underlineTitle=='false'
+					span.tovar-item_title !{titleVar}
+				else
+					span.tovar-item_title.tovar-item_title_underline !{titleVar}
+				if underlineDescription=='false'
+					span.tovar-item_description=description
+				else
+					span.tovar-item_description.tovar-item_description_underline=description
+	else
+		.tovar-item.tovar-item_padding
+			a(href="#")
+				.tovar-item_imgbox
+					img(src='img/'+image)
+					- var titleVar = title
+				if underlineTitle=='false'
+					span.tovar-item_title !{titleVar}
+				else
+					span.tovar-item_title.tovar-item_title_underline !{titleVar}
+				if underlineDescription=='false'
+					span.tovar-item_description=description
+				else
+					span.tovar-item_description.tovar-item_description_underline=description
+
+mixin rateTable(list)
+	table
+		each val, key in list
+			tr
+				td=val[0]
+				td=val[1]
+mixin rate(title, subtitle, description, list)
+	.rate
+		span.rate-title=title
+		if subtitle!=''
+			span.rate-sub-title=subtitle
+		+rateTable(list)
+		.rate-descr=description

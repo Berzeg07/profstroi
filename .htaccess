@@ -1,0 +1,2 @@
+RewriteCond %{HTTP_HOST} ^new.broadcast-park\.ru$ [NC]
+RewriteRule ^(.*)$ http://www.broadcast-park.ru/$1 [R=301,L]
