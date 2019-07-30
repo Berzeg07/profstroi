@@ -1,8 +1,50 @@
 $(document).ready(function() {
+
+    $('.dropdown-btn').click(function() {
+        var dropdown = $(this).next();
+        $(dropdown).toggleClass('active');
+        if ($(dropdown).hasClass('active')) {
+            $(dropdown).slideDown();
+        } else {
+            $(dropdown).slideUp();
+        }
+    });
+
+    $(".dropdown-link").click(function(e) {
+        e.preventDefault();
+        var $this = $(this);
+
+        if (!$this.hasClass("active")) {
+            $('.dropdown-menu_inner ul').slideUp();
+            $(".dropdown-link").removeClass("active");
+        }
+
+        $this.toggleClass("active");
+        $this.next().slideToggle();
+    });
+
+
+    $(document).click(function(event) {
+        if ($(event.target).closest(".dropdown-btn").length) return;
+        if ($(event.target).closest(".dropdown-menu").length) return;
+        $(".dropdown-menu").slideUp();
+        event.stopPropagation();
+        $('.dropdown-menu').removeClass('active');
+    });
+
+
+
+
+
+
+
+
+
+    // ======================================================================
     // wow animate
     new WOW().init();
-	
-	// $(".phone").mask("+ 7 (999) 999 - 99 - 99?"); 
+
+    // $(".phone").mask("+ 7 (999) 999 - 99 - 99?");
 
     // simplebox
     (function() {
@@ -113,9 +155,9 @@ $(document).ready(function() {
         $('.reservation-modal').hide();
         $('.modal-thanks').fadeIn();
     };
-	
-	// textarea autosize
-	autosize($('textarea'));
+
+    // textarea autosize
+    autosize($('textarea'));
 
     // custom select ===========================================================
     $('.select').selectmenu();

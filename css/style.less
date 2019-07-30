@@ -303,7 +303,7 @@ textarea {
 
 	&-middle {
 		position: relative;
-		background: rgba(0,0,0,0.5);
+		background: rgba(0,0,0,0.8);
 		padding: 10px 0 0;
 		color: white;
 
@@ -318,6 +318,10 @@ textarea {
 		a {
 			color: white;
 		}
+	}
+
+	&-bottom {
+		background: #316565;
 	}
 
 	&-schedule {
@@ -345,6 +349,122 @@ textarea {
 	&-btn {
 		@media(min-width: 992px) {
 			margin-top: 17px;
+		}
+	}
+
+	&-banner {
+		background: url("../img/banner-bg.png") no-repeat center;
+		background-size: cover;
+		text-align: center;
+		padding: 25px 0;
+		@media(min-width: 768px) {
+			padding: 65px 0;
+		}
+
+		p {
+			color: white;
+			text-transform: uppercase;
+			font-weight: 400;
+			font-size: 21px;
+			margin-bottom: 25px;
+			text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8);
+			@media(min-width: 768px) {
+				margin-bottom: 50px;
+				font-size: 40px;
+			}
+		}
+	}
+}
+
+.banner-btn {
+	-webkit-box-shadow: 6px 9px 14px -6px rgba(0,0,0,0.75);
+	-moz-box-shadow: 6px 9px 14px -6px rgba(0,0,0,0.75);
+	box-shadow: 6px 9px 14px -6px rgba(0,0,0,0.75);
+}
+
+.dropdown-btn {
+	width: 100%;
+	padding: 16px 0;
+	outline: none;
+	border: none;
+	color: white;
+	background: #003131;
+	cursor: pointer;
+	transition: 0.5s;
+
+	span {
+		position: relative;
+		padding-left: 40px;
+		@media(min-width: 768px) {
+			padding-left: 27px;
+			font-size: 13px;
+		}
+		@media(min-width: 992px) {
+			padding-left: 40px;
+			font-size: 16px;
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 19px;
+			height: 15px;
+			background: url("../img/burger.png") no-repeat center;
+		}
+	}
+
+	&:hover {
+		background: #001C1C;
+	}
+}
+
+.form-search {
+	padding: 11px 0;
+
+	label {
+		position: relative;
+		width: 100%;
+		display: inline-block;
+		@media(min-width: 992px) {
+			padding-left: 36px;
+		}
+
+		input {
+			width: 90%;
+			height: 31px;
+			background: white;
+			border: none;
+			color: #C4C4C4;
+			border-radius: 5px;
+			padding: 0 25px 0 10px;
+			font-size: 11px;
+			@media(min-width: 768px) {
+				font-size: 15px;
+			}
+			@media(min-width: 992px) {
+				font-size: 19px;
+			}
+		}
+	}
+
+	&_btn {
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 102px;
+		height: 31px;
+		outline: none;
+		border: none;
+		border-radius: 0 5px 5px 0;
+		color: white;
+		background: #003131;
+		transition: 0.5s;
+
+		&:hover {
+			background: #001C1C;
 		}
 	}
 }
@@ -452,6 +572,234 @@ textarea {
 			display: flex;
 			flex-wrap: wrap;
 			justify-content: space-between;
+		}
+	}
+}
+
+.p0 {
+	padding: 0;
+	@media(min-width: 992px) {
+		padding-left: 15px;
+		padding-right: 0;
+	}
+}
+
+.basket {
+	padding: 11px 0;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	justify-content: center;
+	@media(min-width: 768px) {
+		padding: 16px 0 9px;
+	}
+	@media(min-width: 992px) {
+		justify-content: flex-end;
+	}
+
+	a {
+		color: white;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		@media(min-width: 768px) {
+			font-size: 13px;
+		}
+		@media(min-width: 992px) {
+			font-size: 16px;
+		}
+	}
+
+	&-img {
+		position: relative;
+		display: inline-block;
+		margin-right: 18px;
+	}
+
+	&-count {
+		display: inline-block;
+		min-width: 15px;
+		padding: 0 2px;
+		border-radius: 10em;
+		font-size: 11px;
+		background: #FF6506;
+		color: black;
+		text-align: center;
+		position: absolute;
+		top: -6px;
+		right: -6px;
+	}
+}
+
+.dropdown-menu {
+	width: 100%;
+	background: #003131;
+	color: white;
+	padding: 10px 27px;
+	border-radius: 0;
+	top: 96%;
+	border: none;
+	left: 50%;
+	transform: translateX(-50%);
+	display: none;
+
+	&_inner {
+		position: relative;
+		margin-bottom: 28px;
+
+		ul {
+			padding: 10px 0 10px 15px;
+			display: none;
+		}
+
+		&:after {
+			content: "";
+			position: absolute;
+			right: 0;
+			top: 9px;
+			width: 9px;
+			height: 5px;
+			background: url("../img/menu-arrow.png") no-repeat center;
+			@media(min-width: 768px) {
+				right: -3px;
+			}
+			@media(min-width: 992px) {
+				right: 0;
+			}
+		}
+	}
+
+	a {
+		color: white;
+	}
+	@media(min-width: 768px) {
+		font-size: 11px;
+		padding: 10px 9px;
+	}
+	@media(min-width: 992px) {
+		width: 94%;
+		left: 15px;
+		transform: unset;
+		padding: 10px 27px;
+	}
+	@media(min-width: 1200px) {
+		width: 95%;
+		font-size: 14px;
+	}
+}
+
+.dropdown-link {
+	cursor: pointer;
+}
+
+.advantage {
+	background: #E6E6E6;
+	padding: 32px 0;
+
+	&-item {
+		padding: 32px 0;
+		position: relative;
+		color: white;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		justify-content: center;
+		margin-bottom: 20px;
+		@media(min-width: 992px) {
+			margin-bottom: 0;
+		}
+
+		&_inner {
+			position: relative;
+			padding-left: 47px;
+
+			&:after {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+
+			p {
+				font-weight: 700;
+				font-size: 15px;
+				@media(min-width: 992px) {
+					font-size: 12px;
+				}
+				@media(min-width: 1200px) {
+					font-size: 15px;
+				}
+			}
+
+			span {
+				font-size: 12px;
+				@media(min-width: 992px) {
+					font-size: 11px;
+				}
+				@media(min-width: 1200px) {
+					font-size: 12px;
+				}
+			}
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			background: url("../img/adv-bg.png") no-repeat center;
+			width: 111px;
+			height: 111px;
+		}
+	}
+
+	&-shipping {
+		background: #316565;
+
+		.advantage-item_inner {
+			&:after {
+				width: 34px;
+				height: 34px;
+				background: url("../img/advantage-icon-1.svg") no-repeat center;
+			}
+		}
+	}
+
+	&-warranty {
+		background: #6A98A7;
+
+		.advantage-item_inner {
+			&:after {
+				width: 32px;
+				height: 32px;
+				background: url("../img/advantage-icon-2.svg") no-repeat center;
+			}
+		}
+	}
+
+	&-range {
+		background: #B46836;
+
+		.advantage-item_inner {
+			&:after {
+				width: 35px;
+				height: 29px;
+				background: url("../img/advantage-icon-3.svg") no-repeat center;
+			}
+		}
+	}
+
+	&-payment {
+		background: #DA9C0B;
+
+		.advantage-item_inner {
+			&:after {
+				width: 27px;
+				height: 29px;
+				background: url("../img/advantage-icon-4.svg") no-repeat center;
+				left: 8px;
+			}
 		}
 	}
 }
