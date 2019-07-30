@@ -177,6 +177,7 @@ input:-moz-placeholder {
 
 body {
 	font-family: 'Open Sans', sans-serif;
+	color: #003131;
 }
 // .wrapper {
 // 	display: flex;
@@ -800,6 +801,133 @@ textarea {
 				background: url("../img/advantage-icon-4.svg") no-repeat center;
 				left: 8px;
 			}
+		}
+	}
+}
+
+.about-us{
+	padding: 25px 0px;
+	background: white;
+	p{
+		font-size: 14px;
+		&:first-child{
+			margin-bottom: 30px;
+		}
+	}
+	@media(min-width: 992px){
+		padding: 55px 0px;
+	}
+	&_title{
+		font-weight: 500;
+		font-size: 25px;
+		margin-bottom: 25px;
+		@media(min-width: 992px){
+			margin-bottom: 35px;
+		}
+	}
+	&_img{
+		position: relative;
+		max-width: 417px;
+		width: 100%;
+		margin: 0 auto 20px;
+		img{
+			display: block;
+		}
+		&:after{
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			background: url(../img/about-overlay.png) no-repeat top center;
+			background-size: cover;
+			z-index: 9;
+		}
+	}
+	&_logo{
+		max-width: 330px;
+		width: 100%;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%,-50%);
+		z-index: 10;
+	}
+}
+
+.footer{
+	&-item{
+		margin-bottom: 20px;
+	}
+	a{
+		color: #003131;
+	}
+	&-top{
+		padding: 25px 0px;
+		background: #E6E6E6;
+		@media(min-width: 992px){
+			padding: 55px 0px;
+		}
+	}
+	&-title{
+		font-weight: 600px;
+		font-size: 25px;
+		padding-bottom: 5px;
+		margin-bottom: 24px;
+		border-bottom: 1px solid #B2B2B2;
+		color: #003131;
+	}
+	&-contact{
+		padding-left: 0;
+		margin-bottom: 25px;
+		li{
+			&:first-child{
+				&:after{
+					background: url("../img/footer-email.svg") no-repeat top left;
+				}
+			}
+			&:nth-child(2){
+				&:after{
+					background: url("../img/footer-phone.svg") no-repeat top left;
+				}
+			}
+			&:last-child{
+				&:after{
+					background: url("../img/footer-geo.svg") no-repeat top left;
+				}
+			}
+		}
+	}
+	&-menu{
+		li{
+			margin-bottom: 25px;
+		}
+	}
+	&-article{
+		p{
+			margin-bottom: 15px;
+		}
+	}
+	&-bottom{
+		background: #003131;
+		padding: 15px 0px;
+	}
+	&-copyright{
+		color: white;
+		font-size: 14px;
+		padding-top: 8px;
+		margin-bottom: 15px;
+		text-align: center;
+		@media(min-width: 768px){
+			margin-bottom: 0;
+			text-align: left;
+		}
+	}
+	&-payment{
+		text-align: center;
+		@media(min-width: 768px){
+			text-align: right;
 		}
 	}
 }
