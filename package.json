@@ -34,7 +34,7 @@
     "gulp-zip": "^4.0.0",
     "imagemin-pngquant": "^6.0.0",
     "node-sass": "^4.11.0",
-    "pug": "^2.0.3"
+    "pug": "^3.0.1"
   },
   "dependencies": {},
   "repository": {
